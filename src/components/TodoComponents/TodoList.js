@@ -10,8 +10,9 @@ const TodoList = props => {
      // console.log(props.todoList)
      return(
           <div>
-               <p>Hello I am the TodoList</p>
+               <h1>Todo List</h1>
                <Todo todoList={props.todoList} toggleTask={props.toggleTask}/>
+               <button onClick={props.clearFinished}>Clear finished tasks</button>
           </div>
      )
 }
