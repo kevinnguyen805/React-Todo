@@ -1,6 +1,5 @@
 import React from 'react';
-import Todo from './components/TodoComponents/Todo'
-
+import TodoList from './components/TodoComponents/TodoList'
 
 const todoData = [
   {
@@ -33,13 +32,11 @@ class App extends React.Component {
     }
   }
 
-
-
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <Todo todoList={this.state.todoList} />
+        <TodoList todoList={this.state.todoList} />
       </div>
     );
   }
