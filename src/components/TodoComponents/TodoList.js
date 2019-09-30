@@ -4,6 +4,7 @@
 // receives your Todos array and iterates over the list generating a new <todo/> for each element
 import React from 'react'
 import Todo from './Todo'
+import './Todo.css'
 
 const TodoList = props => {
 

@@ -5,14 +5,14 @@ const Todo = props => {
 
      // console.log(props.toggleTask)
 
-     const completion = (item) => {
-          if(item.completed === true){
-               return 'completed';
-          }
-          else{
-               return 'uncompleted'
-          }
-     }
+     // const completion = (item) => {
+     //      if(item.completed === true){
+     //           return 'completed';
+     //      }
+     //      else{
+     //           return 'uncompleted'
+     //      }
+     // }
 
      return(
           <div>
@@ -20,7 +20,7 @@ const Todo = props => {
                props.todoList.map(item => {
                     return(
                          <div 
-                         className={completion}
+                         className={`uncompleted${item.completed ? ' completed' : ''}`}
                           key={item.id} onClick={() => props.toggleTask(item.id)}>
                               <p>{item.task}</p>
                               <p>{item.completed}</p>
