@@ -7,11 +7,11 @@ import Todo from './Todo'
 
 const TodoList = props => {
 
-     console.log(props.todoList)
+     // console.log(props.todoList)
      return(
           <div>
                <p>Hello I am the TodoList</p>
-               <Todo todoList={props.todoList}/>
+               <Todo todoList={props.todoList} toggleTask={props.toggleTask}/>
           </div>
      )
 }

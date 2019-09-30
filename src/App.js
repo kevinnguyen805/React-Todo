@@ -33,6 +33,27 @@ class App extends React.Component {
     }
   }
 
+  // * Toggle task 
+    // loop through the array and to find our specific element to toggle !completed
+  toggleTask = id => {
+    console.log(id);
+
+    this.setState({
+      todoList: this.state.todoList.map(item => {
+        if (item.id === id){
+          return{
+            ...item,
+            completed: !item.completed
+          }
+        } else{
+          return item;
+        }
+      })
+    })
+  }
+
+
+  // * Add task
   addItem = taskName => {
     const newItem = {
       task: taskName,
@@ -44,14 +65,19 @@ class App extends React.Component {
     })
   }
 
-
-
+  // * Clear finished tasks 
+  clearFinished = () => {
+    this.setState({
+      todoList: this.state.todoList.filter(item => !item.completed)
+    })
+  }
+  
 
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todoList={this.state.todoList} />
+        <TodoList todoList={this.state.todoList} toggleTask={this.toggleTask}/>
         <TodoForm addItem={this.addItem} />
       </div>
     );
